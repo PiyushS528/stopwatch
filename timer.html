@@ -18,7 +18,7 @@
 			#timer_div {
 				border: 1px solid #ffffff;
 				font-family: monospace;
-				font-size: 22px;
+				font-size: 40px;
 				font-weight: bold;
 				padding: 10px;
 				text-align: center;
@@ -45,7 +45,7 @@
 				var mins = doubleDigit (((elapsedSeconds - 3600 * hrs) / 60) | 0);
 				var secs = doubleDigit ((elapsedSeconds - 3600 * hrs - 60 * mins) | 0);
 				
-				timerDiv.innerHTML = hrs + " : " + mins + " : " + secs;
+				timerDiv.innerHTML = hrs + "<br>" + mins + "<br>" + secs;
 				
 				setTimeout (updateTimer, 1000 - (Date.now() % 1000) );
 			}
