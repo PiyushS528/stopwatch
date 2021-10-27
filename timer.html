@@ -24,7 +24,7 @@
 		<script type="text/javascript>
 			var timerDiv = document.getElementById ("timer_div");
 			function updateTimer () {
-				timerDiv.innerHTML = (Date.now() - new Date (2021, 9, 28, 1, 40, 0)) | 0;
+				timerDiv.innerHTML = ((Date.now() - new Date (2021, 9, 28, 1, 40, 0)) / 1000) | 0;
 				
 				setTimeout (updateTimer, 1000 - (Date.now() % 1000) );
 			}
