@@ -24,11 +24,18 @@
 		
 		<script type="text/javascript">
 			var timerDiv = document.getElementById ("timer_div");
+			
+			function doubleDigit (t) {
+				var s = t.toString();
+				if (s.length === 1)
+					s = '0' + s;
+				return s;
+			}
 			function updateTimer () {
 				var elapsedSeconds = ((Date.now() - new Date (2021, 9, 28, 1, 40, 0)) / 1000) | 0;
-				var hrs = (elapsedSeconds / 3600) | 0;
-				var mins = ((elapsedSeconds - 3600 * hrs) / 60) | 0;
-				var secs = (elapsedSeconds - 3600 * hrs - 60 * mins) | 0;
+				var hrs = doubleDigit ((elapsedSeconds / 3600) | 0);
+				var mins = doubleDigit (((elapsedSeconds - 3600 * hrs) / 60) | 0);
+				var secs = doubleDigit ((elapsedSeconds - 3600 * hrs - 60 * mins) | 0);
 				
 				timerDiv.innerHTML = hrs + " : " + mins + " : " + secs;
 				
