@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<title> Timer </title>
+		<meta charset="UTF-8">
+		<meta type="viewport" content="width=device-width; initial-scale=1">
+		
+		<style type="text/css">
+			#container {
+				margin: auto;
+				max-width: 100%;
+				width: 300px;
+			}
+			#timer_div {
+				border: 1px solid #000000;
+				padding: 10px;
+			}
+	</head>
+	<body>
+		<div id="container">
+			<div id="timer_div"></div>
+		</div>
+		
+		<script type="text/javascript>
+			var timerDiv = document.getElementById ("timer_div");
+			function updateTimer () {
+				timerDiv.innerHTML = (Date.now() - new Date (2021, 9, 28, 1, 40, 0)) | 0;
+				
+				setTimeout (updateTimer, 1000 - (Date.now() % 1000) );
+			}
+			
+			setTImeout (updateTimer, 1000 - (Date.now() % 1000) );
+		</script>
+	</body>
+</html>
