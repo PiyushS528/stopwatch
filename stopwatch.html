@@ -33,7 +33,15 @@
 		
 		<script type="text/javascript">
 			var timerDiv = document.getElementById ("timer_div");
-			var startTime = new Date (2021, 9, 28, 1, 40, 0).getTime();
+			var t = {
+				y: 2021,
+				mo: 9,
+				d: 28,
+				h: 1,
+				m: 40,
+				s: 0
+			};
+			var startTime = new Date (t.y, t.mo, t.d, t.h, t.m, t.s).getTime();
 			
 			function doubleDigit (t) {
 				var s = t.toString();
