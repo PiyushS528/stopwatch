@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title> Timer </title>
+		<title> Stopwatch </title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width; initial-scale=1">
 		
@@ -11,28 +11,34 @@
 				color: #000000;
 			}
 			#container {
+				font-family: monospace;
 				margin: auto;
 				max-width: 100%;
 				width: 300px;
 			}
-			#timer_div {
+			#time_display {
 				border: 1px solid #000000;
-				font-family: monospace;
 				font-size: 40px;
 				font-weight: bold;
 				padding: 10px;
 				text-align: center;
+			}
+			#start_time {
+				font-size: 10px;
 			}
 		</style>
 	</head>
 	<body>
 		<div id="container">
 			<br>
-			<div id="timer_div"></div>
+			<div id="time_display"></div>
+			<div id="start_time"></div>
 		</div>
 		
 		<script type="text/javascript">
-			var timerDiv = document.getElementById ("timer_div");
+			var timeDisplay = document.getElementById ("time_display");
+			var startTimeDisplay = document.getElementById ("start_time");
+			
 			var t = {
 				y: 2021,
 				mo: 9,
@@ -42,6 +48,7 @@
 				s: 0
 			};
 			var startTime = new Date (t.y, t.mo, t.d, t.h, t.m, t.s).getTime();
+			var startStr;
 			
 			function doubleDigit (t) {
 				var s = t.toString();
@@ -55,11 +62,13 @@
 				var mins = doubleDigit (((elapsedSeconds - 3600 * hrs) / 60) | 0);
 				var secs = doubleDigit ((elapsedSeconds - 3600 * hrs - 60 * mins) | 0);
 				
-				timerDiv.innerHTML = hrs + "<br>" + mins + "<br>" + secs;
+				timeDisplay.innerHTML = hrs + "<br>" + mins + "<br>" + secs;
+				startTimeDisplay.innerHTMl = startTimeStr;
 				
 				setTimeout (updateTimer, 1000 - (Date.now() % 1000) );
 			}
 			
+			var startTimeStr = doubleDigit (t.y) + " - " + doubleDigit (t.mo + 1) + " - " +  doubleDigit (t.d) + " " + doubleDigit (t.h) + " : " + doubleDigit (t.m) + " : " + doubleDigit (t.s);
 			setTimeout (updateTimer, 1000 - (Date.now() % 1000) );
 		</script>
 	</body>
