@@ -48,7 +48,7 @@
 				s: 0
 			};
 			var startTime = new Date (t.y, t.mo, t.d, t.h, t.m, t.s).getTime();
-			var startStr;
+			var startTimeStr;
 			
 			function doubleDigit (t) {
 				var s = t.toString();
@@ -63,12 +63,12 @@
 				var secs = doubleDigit ((elapsedSeconds - 3600 * hrs - 60 * mins) | 0);
 				
 				timeDisplay.innerHTML = hrs + "<br>" + mins + "<br>" + secs;
-				startTimeDisplay.innerHTMl = startTimeStr;
+				startTimeDisplay.innerHTML = startTimeStr;
 				
 				setTimeout (updateTimer, 1000 - (Date.now() % 1000) );
 			}
 			
-			var startTimeStr = doubleDigit (t.y) + " - " + doubleDigit (t.mo + 1) + " - " +  doubleDigit (t.d) + " " + doubleDigit (t.h) + " : " + doubleDigit (t.m) + " : " + doubleDigit (t.s);
+			startTimeStr = doubleDigit (t.y) + " - " + doubleDigit (t.mo + 1) + " - " +  doubleDigit (t.d) + " " + doubleDigit (t.h) + " : " + doubleDigit (t.m) + " : " + doubleDigit (t.s);
 			setTimeout (updateTimer, 1000 - (Date.now() % 1000) );
 		</script>
 	</body>
