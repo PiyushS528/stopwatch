@@ -1,1 +1,1 @@
-## Stopwatch: [https://piyushs528.github.io/timer/timer.html](https://piyushs528.github.io/timer/timer.html)
+## Stopwatch: [https://piyushs528.github.io/stopwatch/stopwatch.html](https://piyushs528.github.io/stopwatch/stopwatch.html)
